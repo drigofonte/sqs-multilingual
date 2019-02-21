@@ -22,7 +22,7 @@ $(document).ready(function () {
           
       var updateLogoLink = function(e) {
         if (e != null)
-			currentLang = e.currentTarget.href.split("/")[3];
+			    currentLang = e.currentTarget.href.split("/")[3];
         if (currentLang == "")
           currentLang = defaultLang;
         var root = "/" + currentLang;
@@ -77,6 +77,10 @@ $(document).ready(function () {
             makeHidden(homeNavItem);   
         }
       };
+
+      var updateLangLinks = function() {
+        // Add a language class to each language link. This should allow language links to be customised to be displayed as country flags.
+      };
       
       var update = function(e) {
         updateLogoLink(e);
@@ -87,6 +91,7 @@ $(document).ready(function () {
       return {
         cookieBannerClass: cookieBannerClass,
         udpateLogoLink: updateLogoLink,
+        updateLangLinks: updateLangLinks,
         updateCookieMessage: updateCookieMessage,
         update: update
       };
