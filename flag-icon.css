@@ -24,6 +24,16 @@ SOFTWARE.
 
 **/
 
+a.flag {
+  display: inline-block;
+  overflow: hidden;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  text-indent: -9999px;
+  color: transparent !important;
+}
+
 .flag-icon-background {
   background-size: contain;
   background-position: 50%;
