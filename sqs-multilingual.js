@@ -15,7 +15,7 @@ $(document).ready(function () {
           "button": "I agree"
         },
         "pt-br": {
-          "message": "Usamos cookies para lhe proporcionar com uma excelente experiência. Clique no botão abaixo para concordar com o uso de cookies.",
+          "message": "Esse site usa cookies para lhe proporcionar uma excelente experiência. Clique no botão abaixo para concordar com o uso de cookies.",
           "button": "Concordo"
         }
       };
