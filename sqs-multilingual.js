@@ -50,7 +50,7 @@ $(document).ready(function () {
       var updateNavigationLinks = function() {
         // Show menu items for selected language
         var currentLangHref = "[href^=\\/"+currentLang+"]";
-        var currentLandLink = "a" + currentLangHref;
+        var currentLangLink = "a" + currentLangHref;
         $(".nav-item.collection > " + currentLangLink + ", .folder-link.collection > " + currentLangLink).each(function(i, v) {
           makeVisible($(v).parent());
         });
