@@ -49,26 +49,27 @@ $(document).ready(function () {
       
       var updateNavigationLinks = function() {
         // Show menu items for selected language
-        var currentLangHref = "a[href^=\\/"+currentLang+"]";
-        $(".nav-item.collection > " + currentLangHref + ", .mobile-primary-nav-links > div.collection > " + currentLangHref).each(function(i, v) {
+        var currentLangHref = "[href^=\\/"+currentLang+"]";
+        var currentLandLink = "a" + currentLangHref;
+        $(".nav-item.collection > " + currentLangLink + ", .folder-link.collection > " + currentLangLink).each(function(i, v) {
           makeVisible($(v).parent());
         });
         
         // Hide menu items for all other languages
-        $(".nav-item.collection > a, .mobile-primary-nav-links > div.collection > a").not("[href^=\\/"+currentLang+"]").each(function(i, v) {
+        $(".nav-item.collection > a, .folder-link.collection > a").not(currentLangHref).each(function(i, v) {
           makeHidden($(v).parent());
         });
         
         // Hide menu item for the current language
-        makeHidden($(".nav-item.external > a[href^=\\/"+currentLang+"]").parent());
+        makeHidden($(".nav-item.external > " + currentLangLink + ", .folder-link.external > " + currentLangLink).parent());
         
         // Show menu items for other languages
-        $(".nav-item.external > a").not("[href^=\\/"+currentLang+"]").each(function(i, v) {
+        $(".nav-item.external > a, .folder-link.external > a").not(currentLangHref).each(function(i, v) {
           makeVisible($(v).parent());
         });
         
         // Update visibility of the home menu item
-        var homeNavItem = $(".nav-item.collection > a[href=\\/]").parent();
+        var homeNavItem = $(".nav-item.collection > a[href=\\/], .folder-link.collection > a[href=\\/]").parent();
         if (homeNavItem != undefined) {
           if (currentLang == defaultLang)
             makeVisible(homeNavItem);
@@ -91,7 +92,7 @@ $(document).ready(function () {
       };
     })();
     
-    $(".nav-item a").click(function(e) {
+    $(".nav-item a, .folder-link a").click(function(e) {
         lang.update(e);
     });
     
