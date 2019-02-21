@@ -25,9 +25,9 @@ $(document).ready(function () {
 			currentLang = e.currentTarget.href.split("/")[3];
         if (currentLang == "")
           currentLang = defaultLang;
-		var root = "/" + currentLang;
-		$(".mobile-site-title a[href]").attr("href", root);
-		$(".site-title a[href]").attr("href", root);
+        var root = "/" + currentLang;
+        $(".mobile-site-title a[href]").attr("href", root);
+        $(".site-title a[href]").attr("href", root);
       };
         
       var updateCookieMessage = function() {
@@ -49,12 +49,13 @@ $(document).ready(function () {
       
       var updateNavigationLinks = function() {
         // Show menu items for selected language
-        $(".nav-item.collection > a[href^=\\/"+currentLang+"]").each(function(i, v) {
+        var currentLangHref = "a[href^=\\/"+currentLang+"]";
+        $(".nav-item.collection > " + currentLangHref + ", .mobile-primary-nav-links > div.collection > " + currentLangHref).each(function(i, v) {
           makeVisible($(v).parent());
         });
         
         // Hide menu items for all other languages
-        $(".nav-item.collection > a").not("[href^=\\/"+currentLang+"]").each(function(i, v) {
+        $(".nav-item.collection > a, .mobile-primary-nav-links > div.collection > a").not("[href^=\\/"+currentLang+"]").each(function(i, v) {
           makeHidden($(v).parent());
         });
         
