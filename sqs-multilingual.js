@@ -102,23 +102,25 @@ $(document).ready(function () {
     // Select the node that will be observed for mutations
     var targetNode = $("[class^=" + lang.cookieBannerClass + "]")[0];
 
-    // Options for the observer (which mutations to observe)
-    var config = { attributes: true, childList: true, subtree: true };
+    if (targetNode != undefined) {
+      // Options for the observer (which mutations to observe)
+      var config = { attributes: true, childList: true, subtree: true };
 
-    // Callback function to execute when mutations are observed
-    var callback = function(mutationsList, observer) {
-        for(var mutation of mutationsList) {
-            if (mutation.type == 'childList') {
-              	observer.disconnect();
-                lang.update();
-              	observer.observe(targetNode, config);
-            }
-        }
-    };
+      // Callback function to execute when mutations are observed
+      var callback = function(mutationsList, observer) {
+          for(var mutation of mutationsList) {
+              if (mutation.type == 'childList') {
+                  observer.disconnect();
+                  lang.update();
+                  observer.observe(targetNode, config);
+              }
+          }
+      };
 
-    // Create an observer instance linked to the callback function
-    var observer = new MutationObserver(callback);
+      // Create an observer instance linked to the callback function
+      var observer = new MutationObserver(callback);
 
-    // Start observing the target node for configured mutations
-    observer.observe(targetNode, config);
+      // Start observing the target node for configured mutations
+      observer.observe(targetNode, config);
+    }
   });
