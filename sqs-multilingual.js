@@ -25,7 +25,7 @@ $(document).ready(function () {
 			currentLang = e.currentTarget.href.split("/")[3];
         if (currentLang == "")
           currentLang = defaultLang;
-		var root = "/" + lang;
+		var root = "/" + currentLang;
 		$(".mobile-site-title a[href]").attr("href", root);
 		$(".site-title a[href]").attr("href", root);
       };
