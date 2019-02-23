@@ -20,12 +20,12 @@ $(document).ready(function () {
         "cookie": {
           "message": "Esse site usa cookies próprios e de terceiros para obter dados estatísticos da navegação de nossos usuários e melhorar nossos serviços. Se continua navegando ou aceita clicando no botão abaixo, consideramos que aceita seu uso.",
           "button": "Concordo"
-        },
-        "es-es": {
-          "cookie": {
-            "message": "Esta web utiliza cookies propias y de terceros para obtener datos estadísticos de la navegación de nuestros usuarios y mejorar nuestros servicios. Si acepta o continúa navegando, consideramos que acepta su uso.",
-            "button": "Aceptar"
-          }
+        }
+      },
+      "es-es": {
+        "cookie": {
+          "message": "Esta web utiliza cookies propias y de terceros para obtener datos estadísticos de la navegación de nuestros usuarios y mejorar nuestros servicios. Si acepta o continúa navegando, consideramos que acepta su uso.",
+          "button": "Aceptar"
         }
       }
     };
