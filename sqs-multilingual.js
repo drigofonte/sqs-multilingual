@@ -12,14 +12,20 @@ $(document).ready(function () {
     var langMappings = {
       "en-gb": {
         "cookie": {
-          "message": "We use cookies to provide you with a great experience. Click on the button below to agree with our use of cookies.",
+          "message": "This site uses its own cookies as well as third-party cookies to gather statistical data regarding the browsing behaviour of our users and to improve our services. If you click the button below or continue navigating, we'll consider you agree with the use of cookies.",
           "button": "I agree"
         }
       },
       "pt-br": {
         "cookie": {
-          "message": "Esse site usa cookies para lhe proporcionar uma excelente experiência. Clique no botão abaixo para concordar com o uso de cookies.",
+          "message": "Esse site usa cookies próprios e de terceiros para obter dados estatísticos da navegação de nossos usuários e melhorar nossos serviços. Se continua navegando ou aceita clicando no botão abaixo, consideramos que aceita seu uso.",
           "button": "Concordo"
+        },
+        "es-es": {
+          "cookie": {
+            "message": "Esta web utiliza cookies propias y de terceros para obtener datos estadísticos de la navegación de nuestros usuarios y mejorar nuestros servicios. Si acepta o continúa navegando, consideramos que acepta su uso.",
+            "button": "Aceptar"
+          }
         }
       }
     };
